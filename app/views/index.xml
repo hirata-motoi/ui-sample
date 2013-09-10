@@ -1,7 +1,13 @@
 <Alloy>
-	<Window class="container">
-		<Label id="label" onClick="doClick">Hello, World</Label>
-	</Window>
+	<TabGroup>
+		<Tab title="gallary">
+			<Window title="gallary">
+				<TableView id="gallaryTable" />
+			</Window>
+		</Tab>
+		<Tab title="camera">
+			<Window title="camera">
+			</Window>
+		</Tab>
+	</TabGroup>
 </Alloy>
-
-

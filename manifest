@@ -1,9 +1,9 @@
-#appname: ui-sample
-#appid: com.example.uisample
-#type: mobile
-#guid: 5844229a-12dd-480d-8a99-ae5e5af726e6
-#version: 1.0
-#publisher: not specified
-#url: not specified
-#image: appicon.png
-#desc: not specified
+#appname:ui-sample
+#appid:org.waremon.uisample
+#type:mobile
+#guid:5844229a-12dd-480d-8a99-ae5e5af726e6
+#version:1.0
+#publisher:hirata.motoi
+#url:http://
+#image:appicon.png
+#desc:not specified
