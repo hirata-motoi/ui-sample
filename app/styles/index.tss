@@ -1,8 +1,5 @@
-".container": {
-	backgroundColor:"white"
-},
-"Label": {
-	width: Ti.UI.SIZE,
+"#gallaryTable1": {
 	height: Ti.UI.SIZE,
-	color: "#000"
-} 
+	width: 'auto',
+	layout: 'horizontal',
+}

@@ -9,30 +9,32 @@ function Controller() {
     $.__views.index = Ti.UI.createTabGroup({
         id: "index"
     });
-    $.__views.__alloyId2 = Ti.UI.createWindow({
-        title: "gallary",
-        id: "__alloyId2"
+    $.__views.gallaryWin = Ti.UI.createWindow({
+        id: "gallaryWin"
     });
-    $.__views.gallaryTable = Ti.UI.createTableView({
-        id: "gallaryTable"
+    $.__views.gallaryTable1 = Ti.UI.createTableView({
+        height: Ti.UI.SIZE,
+        width: "auto",
+        layout: "horizontal",
+        id: "gallaryTable1"
     });
-    $.__views.__alloyId2.add($.__views.gallaryTable);
+    $.__views.gallaryWin.add($.__views.gallaryTable1);
     $.__views.__alloyId1 = Ti.UI.createTab({
-        window: $.__views.__alloyId2,
-        title: "gallary",
+        window: $.__views.gallaryWin,
+        title: "gallaryTab",
         id: "__alloyId1"
     });
     $.__views.index.addTab($.__views.__alloyId1);
-    $.__views.__alloyId4 = Ti.UI.createWindow({
-        title: "camera",
-        id: "__alloyId4"
-    });
-    $.__views.__alloyId3 = Ti.UI.createTab({
-        window: $.__views.__alloyId4,
-        title: "camera",
+    $.__views.__alloyId3 = Ti.UI.createWindow({
+        title: "cameraWin",
         id: "__alloyId3"
     });
-    $.__views.index.addTab($.__views.__alloyId3);
+    $.__views.__alloyId2 = Ti.UI.createTab({
+        window: $.__views.__alloyId3,
+        title: "cameraTab",
+        id: "__alloyId2"
+    });
+    $.__views.index.addTab($.__views.__alloyId2);
     $.__views.index && $.addTopLevelView($.__views.index);
     exports.destroy = function() {};
     _.extend($, $.__views);
@@ -40,12 +42,13 @@ function Controller() {
     for (var i = 0; 5 > i; i++) {
         var bgcolor = 1 == i % 2 ? true : false;
         var row = Alloy.createController("row", {
-            id: i + 1,
+            id1: 2 * i + 1,
+            id2: 2 * i + 2,
             bgcolor: bgcolor
         }).getView();
         data.push(row);
     }
-    $.gallaryTable.setData(data);
+    $.gallaryTable1.setData(data);
     $.index.open();
     _.extend($, exports);
 }

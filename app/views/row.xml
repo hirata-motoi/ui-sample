@@ -1,6 +1,7 @@
 <Alloy>
-　　<TableViewRow id="row">
-　　　　<Label id="title">Menu</Label>
-　　　　<ImageView id="image" image="/image1.jpg" />
-　　</TableViewRow>
+	<TableViewRow id="row">
+		<Label id="title"></Label>
+		<ImageView id="image1" image="/image1.jpg" onClick="rowClick1" />
+		<ImageView id="image2" image="/image1.jpg" onClick="rowClick2" />
+	</TableViewRow>
 </Alloy>

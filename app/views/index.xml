@@ -1,12 +1,12 @@
 <Alloy>
 	<TabGroup>
-		<Tab title="gallary">
-			<Window title="gallary">
-				<TableView id="gallaryTable" />
+		<Tab title="gallaryTab">
+			<Window id="gallaryWin">
+				<TableView id="gallaryTable1" />
 			</Window>
 		</Tab>
-		<Tab title="camera">
-			<Window title="camera">
+		<Tab title="cameraTab">
+			<Window title="cameraWin">
 			</Window>
 		</Tab>
 	</TabGroup>

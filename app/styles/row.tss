@@ -1,17 +1,27 @@
 "#row": {
-        width: Ti.UI.FILL,
-        height: "160dp",
+        width:  "auto",
+        height: "130dp",
+        layout: "horizontal",
 },
 
-"#title": {
-        width: Ti.UI.FILL,
-        height: Ti.UI.FILL,
-        left: "24dp",
-        color: "#a62901",
-        font: {fontSize:"16dp" ,fontWeight:"bold"},
-},
-"#image": {
-        width: "120dp",
-        height: "140dp",
-        right: "24dp"
+//"#title": {
+//        width: Ti.UI.FILL,
+//        height: Ti.UI.FILL,
+//        left: "24dp",
+//        color: "#a62901",
+//        font: {fontSize:"16dp" ,fontWeight:"bold"},
+//},
+
+"#image1": {
+        width: "100dp",
+        height: "100dp",
+        top: '15dp',
+        left: '40dp',
+}
+
+"#image2": {
+        width: "100dp",
+        height: "100dp",
+        top: '15dp',
+        left: '40dp',
 }
