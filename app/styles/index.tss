@@ -1,59 +1,38 @@
-".content": {
-	backgroundColor:"white",
-}
-
-"#label": {
-	color:"white",
-	top:50,
-}
-
 "#content_view1": {
 	backgroundColor:"white",
 	backgroundImage:"/image1.jpg",
 	visible:"true",
-	bottom:60,
+	bottom:"60",
 }
 
 "#content_view2": {
 	backgroundColor:"white",
 	backgroundImage:"/image2.jpg",
 	visible:"false",
-	bottom:60,
+	bottom:"60",
 }
 
 "#content_view3": {
 	backgroundColor:"white",
 	backgroundImage:"/image3.jpg",
 	visible:"false",
-	bottom:60,
+	bottom:"60",
 }
 
 "#button_view": {
-	 backgroundColor:"blue",
+	 backgroundColor:"white",
 	 height:"60",
 	 bottom:"0",
 }
 
 "#button1": {
-	width:50,
-	height:50,
-	left:30,
-	bottom:5,
 	backgroundImage:"/image1.jpg"
 }
 
 "#button2": {
-	width:50,
-	height:50,
-	left:130,
-	bottom:5,
 	backgroundImage:"/image2.jpg"
 }
 
 "#button3": {
-	width:50,
-	height:50,
-	left:230,
-	bottom:5,
 	backgroundImage:"/image3.jpg"
 }

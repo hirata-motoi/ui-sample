@@ -2,20 +2,43 @@ function Controller() {
     function doClick() {
         alert("fuck!");
     }
-    function toRed() {
-        $.content_view1.visible = "true";
-        $.content_view2.visible = "false";
-        $.content_view3.visible = "false";
+    function changeView1() {
+        changeView(1);
     }
-    function toGreen() {
-        $.content_view1.visible = "false";
-        $.content_view2.visible = "true";
-        $.content_view3.visible = "false";
+    function changeView2() {
+        changeView(2);
     }
-    function toWhite() {
-        $.content_view1.visible = "false";
-        $.content_view2.visible = "false";
-        $.content_view3.visible = "true";
+    function changeView3() {
+        changeView(3);
+    }
+    function changeView(num) {
+        var winNum = new Array(4);
+        var buttonSize = new Array(4);
+        for (var i = 1; 4 > i; i++) if (i == num) {
+            winNum[i] = "true";
+            buttonSize[i] = "60";
+        } else {
+            winNum[i] = "flase";
+            buttonSize[i] = "50";
+        }
+        $.content_view1.visible = winNum[1];
+        $.content_view2.visible = winNum[2];
+        $.content_view3.visible = winNum[3];
+        $.button1.height = buttonSize[1];
+        $.button1.width = buttonSize[1];
+        $.button2.height = buttonSize[2];
+        $.button2.width = buttonSize[2];
+        $.button3.height = buttonSize[3];
+        $.button3.width = buttonSize[3];
+        adjustSpace();
+    }
+    function adjustSpace() {
+        var viewWidth = Titanium.Platform.displayCaps.platformWidth;
+        var centerPoint = new Array(4);
+        for (var i = 1; 4 > i; i++) centerPoint[i] = viewWidth * i / 4;
+        $.button1.left = centerPoint[1] - $.button1.width / 2;
+        $.button2.left = centerPoint[2] - $.button2.width / 2;
+        $.button3.left = centerPoint[3] - $.button3.width / 2;
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -33,13 +56,11 @@ function Controller() {
         backgroundColor: "white",
         backgroundImage: "/image1.jpg",
         visible: "true",
-        bottom: 60,
+        bottom: "60",
         id: "content_view1"
     });
     $.__views.index.add($.__views.content_view1);
     $.__views.label = Ti.UI.createLabel({
-        color: "white",
-        top: 50,
         text: "Hello, World!",
         id: "label"
     });
@@ -49,13 +70,11 @@ function Controller() {
         backgroundColor: "white",
         backgroundImage: "/image2.jpg",
         visible: "false",
-        bottom: 60,
+        bottom: "60",
         id: "content_view2"
     });
     $.__views.index.add($.__views.content_view2);
     $.__views.label = Ti.UI.createLabel({
-        color: "white",
-        top: 50,
         text: "Hello, World!!",
         id: "label"
     });
@@ -65,67 +84,52 @@ function Controller() {
         backgroundColor: "white",
         backgroundImage: "/image3.jpg",
         visible: "false",
-        bottom: 60,
+        bottom: "60",
         id: "content_view3"
     });
     $.__views.index.add($.__views.content_view3);
     $.__views.label = Ti.UI.createLabel({
-        color: "white",
-        top: 50,
         text: "Hello, World!!!",
         id: "label"
     });
     $.__views.content_view3.add($.__views.label);
     doClick ? $.__views.label.addEventListener("click", doClick) : __defers["$.__views.label!click!doClick"] = true;
     $.__views.button_view = Ti.UI.createView({
-        backgroundColor: "blue",
+        backgroundColor: "white",
         height: "60",
         bottom: "0",
         id: "button_view"
     });
     $.__views.index.add($.__views.button_view);
     $.__views.button1 = Ti.UI.createButton({
-        width: 50,
-        height: 50,
-        left: 30,
-        bottom: 5,
         backgroundImage: "/image1.jpg",
-        title: "RED",
         id: "button1"
     });
     $.__views.button_view.add($.__views.button1);
-    toRed ? $.__views.button1.addEventListener("click", toRed) : __defers["$.__views.button1!click!toRed"] = true;
+    changeView1 ? $.__views.button1.addEventListener("click", changeView1) : __defers["$.__views.button1!click!changeView1"] = true;
     $.__views.button2 = Ti.UI.createButton({
-        width: 50,
-        height: 50,
-        left: 130,
-        bottom: 5,
         backgroundImage: "/image2.jpg",
-        title: "GREEN",
         id: "button2"
     });
     $.__views.button_view.add($.__views.button2);
-    toGreen ? $.__views.button2.addEventListener("click", toGreen) : __defers["$.__views.button2!click!toGreen"] = true;
+    changeView2 ? $.__views.button2.addEventListener("click", changeView2) : __defers["$.__views.button2!click!changeView2"] = true;
     $.__views.button3 = Ti.UI.createButton({
-        width: 50,
-        height: 50,
-        left: 230,
-        bottom: 5,
         backgroundImage: "/image3.jpg",
-        title: "WHITE",
         id: "button3"
     });
     $.__views.button_view.add($.__views.button3);
-    toWhite ? $.__views.button3.addEventListener("click", toWhite) : __defers["$.__views.button3!click!toWhite"] = true;
+    changeView3 ? $.__views.button3.addEventListener("click", changeView3) : __defers["$.__views.button3!click!changeView3"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
+    changeView1();
+    adjustSpace();
     $.index.open();
     __defers["$.__views.label!click!doClick"] && $.__views.label.addEventListener("click", doClick);
     __defers["$.__views.label!click!doClick"] && $.__views.label.addEventListener("click", doClick);
     __defers["$.__views.label!click!doClick"] && $.__views.label.addEventListener("click", doClick);
-    __defers["$.__views.button1!click!toRed"] && $.__views.button1.addEventListener("click", toRed);
-    __defers["$.__views.button2!click!toGreen"] && $.__views.button2.addEventListener("click", toGreen);
-    __defers["$.__views.button3!click!toWhite"] && $.__views.button3.addEventListener("click", toWhite);
+    __defers["$.__views.button1!click!changeView1"] && $.__views.button1.addEventListener("click", changeView1);
+    __defers["$.__views.button2!click!changeView2"] && $.__views.button2.addEventListener("click", changeView2);
+    __defers["$.__views.button3!click!changeView3"] && $.__views.button3.addEventListener("click", changeView3);
     _.extend($, exports);
 }
 

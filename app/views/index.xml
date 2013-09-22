@@ -10,9 +10,9 @@
 			<Label id="label" onClick="doClick">Hello, World!!!</Label>
 		</View>
 		<View id="button_view">
-			<Button id="button1" onClick="toRed">RED</Button>			
-			<Button id="button2" onClick="toGreen">GREEN</Button>
-			<Button id="button3" onClick="toWhite">WHITE</Button>
+			<Button id="button1" onClick="changeView1"></Button>			
+			<Button id="button2" onClick="changeView2"></Button>
+			<Button id="button3" onClick="changeView3"></Button>
 		</View>
 	</Window>
 </Alloy>
