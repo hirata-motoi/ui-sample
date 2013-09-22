@@ -1,3 +1,5 @@
+var animation = require('alloy/animation');
+
 function doClick() {
 	alert("fuck!");
 }
@@ -53,4 +55,25 @@ function adjustSpace() {
 
 changeView1();
 adjustSpace();
+
+
+animation.fadeOut($.tag_table, 0);
+var IsTagTableVisible = 0;
+var fadeInTagView = function(){
+	if(IsTagTableVisible == 0) {
+	 	animation.fadeIn($.tag_table, 500);
+		$.content_view1.removeEventListener('click', fadeInTagView);
+		IsTagTableVisible = 1;
+	} else {
+		IsTagTableVisible = 0;
+	}
+};
+var fadeOutTagView = function(){
+	animation.fadeOut($.tag_table, 500);
+	$.content_view1.addEventListener('click', fadeInTagView);
+};
+
+$.content_view1.addEventListener('click', fadeInTagView);
+$.close_tag.addEventListener('click', fadeOutTagView);
+
 $.index.open();

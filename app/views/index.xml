@@ -1,7 +1,12 @@
 <Alloy>
 	<Window class=".content">
 		<View id="content_view1">
-			<Label id="label" onClick="doClick">Hello, World!</Label>
+			<View id="tag_table">
+				<Button id="tag1">TAB1</Button>
+				<Button id="tag2">TAB2</Button>
+				<Button id="tag3">TAB3</Button>
+				<Button id="close_tag">CLOSE</Button>
+			</View>
 		</View>
 		<View id="content_view2">
 			<Label id="label" onClick="doClick">Hello, World!!</Label>

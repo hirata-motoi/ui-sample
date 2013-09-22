@@ -60,12 +60,37 @@ function Controller() {
         id: "content_view1"
     });
     $.__views.index.add($.__views.content_view1);
-    $.__views.label = Ti.UI.createLabel({
-        text: "Hello, World!",
-        id: "label"
+    $.__views.tag_table = Ti.UI.createView({
+        height: "100",
+        bottom: "0",
+        backgroundImage: "/tag_table_back.png",
+        id: "tag_table"
     });
-    $.__views.content_view1.add($.__views.label);
-    doClick ? $.__views.label.addEventListener("click", doClick) : __defers["$.__views.label!click!doClick"] = true;
+    $.__views.content_view1.add($.__views.tag_table);
+    $.__views.tag1 = Ti.UI.createButton({
+        left: "10",
+        title: "TAB1",
+        id: "tag1"
+    });
+    $.__views.tag_table.add($.__views.tag1);
+    $.__views.tag2 = Ti.UI.createButton({
+        left: "90",
+        title: "TAB2",
+        id: "tag2"
+    });
+    $.__views.tag_table.add($.__views.tag2);
+    $.__views.tag3 = Ti.UI.createButton({
+        left: "170",
+        title: "TAB3",
+        id: "tag3"
+    });
+    $.__views.tag_table.add($.__views.tag3);
+    $.__views.close_tag = Ti.UI.createButton({
+        left: "240",
+        title: "CLOSE",
+        id: "close_tag"
+    });
+    $.__views.tag_table.add($.__views.close_tag);
     $.__views.content_view2 = Ti.UI.createView({
         backgroundColor: "white",
         backgroundImage: "/image2.jpg",
@@ -121,10 +146,25 @@ function Controller() {
     changeView3 ? $.__views.button3.addEventListener("click", changeView3) : __defers["$.__views.button3!click!changeView3"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
+    var animation = require("alloy/animation");
     changeView1();
     adjustSpace();
+    animation.fadeOut($.tag_table, 0);
+    var IsTagTableVisible = 0;
+    var fadeInTagView = function() {
+        if (0 == IsTagTableVisible) {
+            animation.fadeIn($.tag_table, 500);
+            $.content_view1.removeEventListener("click", fadeInTagView);
+            IsTagTableVisible = 1;
+        } else IsTagTableVisible = 0;
+    };
+    var fadeOutTagView = function() {
+        animation.fadeOut($.tag_table, 500);
+        $.content_view1.addEventListener("click", fadeInTagView);
+    };
+    $.content_view1.addEventListener("click", fadeInTagView);
+    $.close_tag.addEventListener("click", fadeOutTagView);
     $.index.open();
-    __defers["$.__views.label!click!doClick"] && $.__views.label.addEventListener("click", doClick);
     __defers["$.__views.label!click!doClick"] && $.__views.label.addEventListener("click", doClick);
     __defers["$.__views.label!click!doClick"] && $.__views.label.addEventListener("click", doClick);
     __defers["$.__views.button1!click!changeView1"] && $.__views.button1.addEventListener("click", changeView1);
