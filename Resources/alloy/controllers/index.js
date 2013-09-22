@@ -30,10 +30,11 @@ function Controller() {
     });
     $.__views.index && $.addTopLevelView($.__views.index);
     $.__views.content_view1 = Ti.UI.createView({
-        id: "content_view1",
-        borderRadius: "10",
-        backgroundColor: "red",
-        visible: "true"
+        backgroundColor: "white",
+        backgroundImage: "/image1.jpg",
+        visible: "true",
+        bottom: 60,
+        id: "content_view1"
     });
     $.__views.index.add($.__views.content_view1);
     $.__views.label = Ti.UI.createLabel({
@@ -45,10 +46,11 @@ function Controller() {
     $.__views.content_view1.add($.__views.label);
     doClick ? $.__views.label.addEventListener("click", doClick) : __defers["$.__views.label!click!doClick"] = true;
     $.__views.content_view2 = Ti.UI.createView({
-        id: "content_view2",
-        borderRadius: "10",
-        backgroundColor: "green",
-        visible: "false"
+        backgroundColor: "white",
+        backgroundImage: "/image2.jpg",
+        visible: "false",
+        bottom: 60,
+        id: "content_view2"
     });
     $.__views.index.add($.__views.content_view2);
     $.__views.label = Ti.UI.createLabel({
@@ -60,10 +62,11 @@ function Controller() {
     $.__views.content_view2.add($.__views.label);
     doClick ? $.__views.label.addEventListener("click", doClick) : __defers["$.__views.label!click!doClick"] = true;
     $.__views.content_view3 = Ti.UI.createView({
-        id: "content_view3",
-        borderRadius: "10",
         backgroundColor: "white",
-        visible: "false"
+        backgroundImage: "/image3.jpg",
+        visible: "false",
+        bottom: 60,
+        id: "content_view3"
     });
     $.__views.index.add($.__views.content_view3);
     $.__views.label = Ti.UI.createLabel({
@@ -75,32 +78,40 @@ function Controller() {
     $.__views.content_view3.add($.__views.label);
     doClick ? $.__views.label.addEventListener("click", doClick) : __defers["$.__views.label!click!doClick"] = true;
     $.__views.button_view = Ti.UI.createView({
-        id: "button_view",
-        borderRadius: "10",
         backgroundColor: "blue",
-        height: "70",
-        bottom: "0"
+        height: "60",
+        bottom: "0",
+        id: "button_view"
     });
     $.__views.index.add($.__views.button_view);
     $.__views.button1 = Ti.UI.createButton({
+        width: 50,
+        height: 50,
         left: 30,
         bottom: 5,
+        backgroundImage: "/image1.jpg",
         title: "RED",
         id: "button1"
     });
     $.__views.button_view.add($.__views.button1);
     toRed ? $.__views.button1.addEventListener("click", toRed) : __defers["$.__views.button1!click!toRed"] = true;
     $.__views.button2 = Ti.UI.createButton({
+        width: 50,
+        height: 50,
         left: 130,
         bottom: 5,
+        backgroundImage: "/image2.jpg",
         title: "GREEN",
         id: "button2"
     });
     $.__views.button_view.add($.__views.button2);
     toGreen ? $.__views.button2.addEventListener("click", toGreen) : __defers["$.__views.button2!click!toGreen"] = true;
     $.__views.button3 = Ti.UI.createButton({
+        width: 50,
+        height: 50,
         left: 230,
         bottom: 5,
+        backgroundImage: "/image3.jpg",
         title: "WHITE",
         id: "button3"
     });

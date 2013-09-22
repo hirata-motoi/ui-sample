@@ -1,15 +1,15 @@
 <Alloy>
 	<Window class=".content">
-		<View id="content_view1" borderRadius="10" backgroundColor="red" visible="true">
-					<Label id="label" onClick="doClick">Hello, World!</Label>
+		<View id="content_view1">
+			<Label id="label" onClick="doClick">Hello, World!</Label>
 		</View>
-		<View id="content_view2" borderRadius="10" backgroundColor="green" visible="false">
-					<Label id="label" onClick="doClick">Hello, World!!</Label>
+		<View id="content_view2">
+			<Label id="label" onClick="doClick">Hello, World!!</Label>
 		</View>
-		<View id="content_view3" borderRadius="10" backgroundColor="white" visible="false">
-					<Label id="label" onClick="doClick">Hello, World!!!</Label>
+		<View id="content_view3">
+			<Label id="label" onClick="doClick">Hello, World!!!</Label>
 		</View>
-		<View id="button_view" borderRadius="10" backgroundColor="blue" height="70" bottom="0">
+		<View id="button_view">
 			<Button id="button1" onClick="toRed">RED</Button>			
 			<Button id="button2" onClick="toGreen">GREEN</Button>
 			<Button id="button3" onClick="toWhite">WHITE</Button>
