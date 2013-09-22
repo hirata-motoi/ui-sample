@@ -1,1 +1,0 @@
-module.exports = [{"isId":true,"priority":100000.0004,"key":"row","style":{width:"auto",height:"130dp",layout:"horizontal",}},{"isId":true,"priority":100000.0005,"key":"image1","style":{width:"100dp",height:"100dp",top:"15dp",left:"40dp",}},{"isId":true,"priority":100000.0006,"key":"image2","style":{width:"100dp",height:"100dp",top:"15dp",left:"40dp",}}];

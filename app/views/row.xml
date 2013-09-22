@@ -1,7 +1,0 @@
-<Alloy>
-	<TableViewRow id="row">
-		<Label id="title"></Label>
-		<ImageView id="image1" image="/image1.jpg" onClick="rowClick1" />
-		<ImageView id="image2" image="/image1.jpg" onClick="rowClick2" />
-	</TableViewRow>
-</Alloy>

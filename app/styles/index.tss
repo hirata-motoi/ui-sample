@@ -1,5 +1,23 @@
-"#gallaryTable1": {
-	height: Ti.UI.SIZE,
-	width: 'auto',
-	layout: 'horizontal',
+".content": {
+	backgroundColor:"white",
+}
+
+"#label": {
+	color:"white",
+	top:50,
+}
+
+"#button1": {
+	left:30,
+	bottom:5,
+}
+
+"#button2": {
+	left:130,
+	bottom:5,
+}
+
+"#button3": {
+	left:230,
+	bottom:5,
 }
